@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EALAM ESKANDER | عالم اسكندر</title>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Aref Ruqaa',serif}
+body{background:#0a0505;color:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+/* LOGIN */
+#loginPage{position:fixed;inset:0;background:radial-gradient(circle at top,#3a0a0a,#0a0505 70%);display:flex;align-items:center;justify-content:center;z-index:100;padding:20px}
+.login-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,80,80,.4);padding:30px;border-radius:20px;width:100%;max-width:380px;text-align:center;backdrop-filter:blur(10px);box-shadow:0 0 40px rgba(255,0,0,.25)}
+.login-box h1{font-size:42px;color:#ff6b6b}
+.login-box p{opacity:.8;margin:8px 0 20px;font-size:19px}
+.login-box input{width:100%;padding:13px;margin:7px 0;border-radius:12px;border:1px solid #444;background:#160a0a;color:#fff;font-size:18px;outline:none;text-align:center}
+.login-box button{width:100%;padding:13px;background:#c22a2a;border:none;border-radius:12px;color:#fff;font-size:22px;cursor:pointer;margin-top:10px}
+.login-box button:hover{background:#e03131}
+.login-box small{display:block;margin-top:12px;opacity:.6}
+/* SITE */
+#site{display:none}
+header{padding:14px 18px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.6);border-bottom:1px solid #3a1111;position:sticky;top:0;z-index:10}
+header b{font-size:26px;color:#ff6b6b}
+header span{background:#c22a2a;padding:6px 14px;border-radius:20px;font-size:16px}
+.hero{text-align:center;padding:35px 15px 10px;background:linear-gradient(180deg,#2a0808,transparent)}
+.hero h1{font-size:44px;color:#ff6b6b;line-height:1.2}
+.hero p{font-size:21px;opacity:.9;margin-top:8px}
+.hero .badges{margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hero .badges span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:6px 14px;border-radius:20px;font-size:16px}
+.clock-box{margin:18px auto;max-width:420px;background:#180808;border:1px solid #ff4d4d66;border-radius:18px;padding:14px;text-align:center}
+.clock-box b{font-size:36px;color:#ffb3b3;letter-spacing:1px}
+.clock-box small{display:block;opacity:.7;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:18px;max-width:1150px;margin:auto}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid{grid-template-columns:1fr 1fr}.hero h1{font-size:34px}}
+.card{border-radius:18px;overflow:hidden;background:#171010;border:1px solid #2b1a1a;display:flex;flex-direction:column}
+.banner{height:105px;display:flex;align-items:center;justify-content:center;font-size:40px}
+.card-body{padding:13px;text-align:center}
+.card-body h3{font-size:24px;margin-bottom:4px}
+.card-body p{font-size:17px;opacity:.8;line-height:1.4;min-height:48px}
+.price{margin:8px 0;font-size:20px;color:#ffb3b3}
+.btn{display:block;background:#c22a2a;padding:10px;border-radius:11px;font-size:19px;margin-top:8px}
+.btn.green{background:#1faa59}.btn.blue{background:#1e7ad1}.btn.gold{background:#c9971f;color:#000}.btn.dark{background:#222}
+.free-tag{display:inline-block;background:#1faa59;padding:3px 10px;border-radius:10px;font-size:15px}
+.paid-tag{display:inline-block;background:#c9971f;color:#000;padding:3px 10px;border-radius:10px;font-size:15px;font-weight:bold}
+.contact{max-width:1150px;margin:10px auto 30px;padding:0 18px}
+.contact-box{background:linear-gradient(135deg,#2a0a0a,#120505);border:1px solid #ff4d4d55;border-radius:18px;padding:20px;text-align:center}
+.contact-box h2{font-size:30px;color:#ff6b6b}
+footer{text-align:center;padding:18px;opacity:.6;font-size:16px}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage">
+  <div class="login-box">
+    <h1>عالم اسكندر</h1>
+    <p>الأمن السيبراني مش رفاهية .. دي حماية لحياتك<br>احمي نفسك قبل ما تُخترق</p>
+    <input id="uName" placeholder="اسمك">
+    <input id="uPhone" placeholder="رقم الواتساب">
+    <input id="uPass" type="password" placeholder="كلمة السر">
+    <button onclick="login()">دخول للموقع 🔥</button>
+    <small>سجل دخول عشان تقدر تشوف كل الأقسام</small>
+  </div>
+</div>
+
+<!-- SITE -->
+<div id="site">
+<header><b>EALAM ESKANDER</b><span>🔥 تعلم - احمي - سيطر</span></header>
+
+<div class="hero">
+  <h1>عالم اسكندر للأمن السيبراني</h1>
+  <p>تعلم، احمي، سيطر .. مكانك الآمن في عالم الإنترنت</p>
+  <div class="badges"><span>🛡️ حماية</span><span>📱 استرجاع</span><span>💻 برمجة</span><span>📈 تداول</span></div>
+</div>
+
+<div class="clock-box">
+  <small>⏰ بتوقيت مصر - القاهرة</small>
+  <b id="clock">00:00:00</b>
+  <small id="date"></small>
+</div>
+
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="banner" style="background:linear-gradient(135deg,#ff5e8a,#7a1e3a)">🛡️</div>
+    <div class="card-body"><h3>مساعدة البنات من التهديد</h3><p>لو حد بيهددك أو بيبتزك، هنساعدك تحمي نفسك وتتصرفي صح وبسرية تامة.</p><a class="btn" href="PUT_YOUR_LINK_HERE">تواصل واتساب</a></div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="banner" style="background:linear-gradient(135deg,#2f80ff,#0a2a5e)">🖼️</div>
+    <div class="card-body"><h3>استرجاع الصور</h3><p>استرجاع صورك الخاصة اللي اتمسحت من موبايلك بطريقة آمنة.</p><a class="btn blue" href="PUT_YOUR_LINK_HERE">تواصل واتساب</a></div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="banner" style="background:linear-gradient(135deg,#1faa59,#0a3a1e)">📱</div>
+    <div class="card-body"><h3>سوفت وير</h3><p>سوفت وير وحل مشاكل الموبايل والكمبيوتر بسرعة واحترافية.</p><a class="btn green" href="PUT_YOUR_LINK_HERE">تواصل واتساب</a></div>
+  </div>
+
+  <!-- 4 TERMUX FREE -->
+  <div class="card">
+    <div class="banner" style="background:#000;border-bottom:2px solid #00ff88">>_</div>
+    <div class="card-body"><h3>تيرمكس</h3><span class="free-tag">مجاني - أساسيات بس</span><p>أقل حاجة: أوامر أساسية + كودين بسيطين للتعلم.</p><a class="btn dark" href="PUT_YOUR_LINK_HERE">ادخل المجاني</a></div>
+  </div>
+
+  <!-- 5 TERMUX PAID -->
+  <div class="card">
+    <div class="banner" style="background:linear-gradient(135deg,#00c853,#003a1a)">💎</div>
+    <div class="card-body"><h3>تيرمكس VIP</h3><span class="paid-tag">مدفوع - أحسن حاجة</span><p>كل الدروس الكاملة والأكواد الاحترافية والأسرار.</p><div class="price">500 ج</div><a class="btn gold" href="PUT_YOUR_LINK_HERE">اشتري الآن</a></div>
+  </div>
+
+  <!-- 6 PROGRAMMING FREE -->
+  <div class="card">
+    <div class="banner" style="background:linear-gradient(135deg,#ff8a00,#ff2d55)">💻</div>
+    <div class="card-body"><h3>تعليم برمجة</h3><span class="free-tag">مجاني - أساسيات بس</span><p>أقل حاجة: يعني ايه برمجة + أول كود ليك.</p><a class="btn dark" href="PUT_YOUR_LINK_HERE">ادخل المجاني</a></div>
+  </div>
+
+  <!-- 7 PROGRAMMING PAID -->
+  <div class="card">
+    <div class="banner" style="background:linear-gradient(135deg,#7b2fff,#1a0a3a)">🚀</div>
+    <div class="card-body"><h3>برمجة VIP</h3><span class="paid-tag">مدفوع - أحسن حاجة</span><p>كورس كامل من الصفر للاحتراف بمشاريع حقيقية.</p><div class="price">اطلب السعر</div><a class="btn gold" href="PUT_YOUR_LINK_HERE">اشتري الآن</a></div>
+  </div>
+
+  <!-- 8 TRADING -->
+  <div class="card">
+    <div class="banner" style="background:linear-gradient(135deg,#ffd700,#8a6d00);color:#000">📈</div>
+    <div class="card-body"><h3>التداول</h3><p>تعلم التداول صح من الصفر، إدارة رأس مال واستراتيجيات.</p><div class="price">900 ج</div><a class="btn gold" href="PUT_YOUR_LINK_HERE">اشتري الآن</a></div>
+  </div>
+
+  <!-- 9 WHATSAPP -->
+  <div class="card">
+    <div class="banner" style="background:#25D366">💬</div>
+    <div class="card-body"><h3>واتساب</h3><p>كلمنا على الواتساب وهنرد عليك بسرعة.</p><a class="btn green" href="PUT_YOUR_LINK_HERE">افتح واتساب</a></div>
+  </div>
+
+  <!-- 10 TELEGRAM -->
+  <div class="card">
+    <div class="banner" style="background:#229ED9">✈️</div>
+    <div class="card-body"><h3>تليجرام</h3><p>انضم لقناة التليجرام عشان توصلك كل الجديد.</p><a class="btn blue" href="PUT_YOUR_LINK_HERE">افتح تليجرام</a></div>
+  </div>
+
+</div>
+
+<div class="contact">
+  <div class="contact-box">
+    <h2>تواصل معي</h2>
+    <p style="font-size:19px;opacity:.85;margin:8px 0">لو عندك أي سؤال أو مشكلة، كلمني على طول</p>
+    <a class="btn" style="max-width:320px;margin:10px auto" href="PUT_YOUR_LINK_HERE">كلمني واتساب الآن</a>
+  </div>
+</div>
+
+<footer>EALAM ESKANDER © 2026 - كل الحقوق محفوظة</footer>
+</div>
+
+<script>
+function login(){
+  let n=document.getElementById('uName').value.trim();
+  let p=document.getElementById('uPass').value.trim();
+  if(!n||!p){alert('اكتب اسمك وكلمة السر الأول');return;}
+  localStorage.setItem('ealam_user',n);
+  document.getElementById('loginPage').style.display='none';
+  document.getElementById('site').style.display='block';
+  window.scrollTo(0,0);
+}
+if(localStorage.getItem('ealam_user')){
+  // لو عايز يجبره يسجل كل مرة شيل السطرين دول
+  // document.getElementById('loginPage').style.display='none';
+  // document.getElementById('site').style.display='block';
+}
+function tick(){
+  let d=new Date(new Date().toLocaleString('en-US',{timeZone:'Africa/Cairo'}));
+  document.getElementById('clock').textContent=d.toLocaleTimeString('ar-EG');
+  document.getElementById('date').textContent=d.toLocaleDateString('ar-EG',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+}
+setInterval(tick,1000); tick();
+</script>
+</body>
+</html>
